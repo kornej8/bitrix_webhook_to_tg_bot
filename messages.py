@@ -10,9 +10,12 @@ def set_task_message(params = {}):
 
 <b>Постановщик</b>: {params.get('CREATED_BY', '')}
 <b>Исполнитель</b>: {params.get('RESPONSIBLE_ID', '')}
-<b>Крайний срок</b>: {(datetime.now() + timedelta(days = 3)).strftime('%d.%m.%Y')}
+<b>Крайний срок</b>: {(datetime.now() + timedelta(days = params.get('DEADLINE', 3))).strftime('%d.%m.%Y')}
 """
     return text
+
+
+
 
 
 messages = {
